@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {Button, Typography} from '@mui/material';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    //<Navbar/>
+    <div className="home">
+      <Typography variant="h1">
+      Welcome!
+      </Typography>
+
+
+      <Typography variant="body1" type="left">
+      Creating a seamless grocery shopping experience, with<br></br>
+      <i> personalized pricing.</i>
+      </Typography>
+
+      <Typography variant="body1">
+      Do you have an account with us?
+      </Typography>
+
+      <Button variant="contained" class="homeButton">Yes</Button>
+      <Button variant="contained" class="homeButton">No</Button>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.logoWell {
+  color: #D63923;
+  font-family: 'Avenir';
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.logoFare {
+  color: #6F96A3;
+  font-family: 'Avenir';
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.bar {
+  padding-left: 24px;
+  padding-top: 16px;
+}
+
+.navitems {
+  padding-left: 36px;
+  flex-direction: column;
+}
+
+.nav-link {
+  font-size: 16px;
+}

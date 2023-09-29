@@ -14,7 +14,7 @@ function CongratsPage({ onSignUp }) {
 
   return (
     <div style={congratsPageStyle} className="congrats-page">
-      <h3>Congratulations!</h3>
+      <h3>Congratulations! </h3>
       <p>You have successfully signed up.</p>
       <button onClick={handleSignUp}>Back to Home</button>
     </div>

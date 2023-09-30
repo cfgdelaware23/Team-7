@@ -3,6 +3,7 @@ import {Button, Typography} from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import "./FeedbackPage.css"
 import React, { useState, useEffect } from 'react';
+//commented out things are parts that connect to the backend.
 // import fs from 'fs/promises'; // Node.js file system module
 
 // function RandomFood(props) {

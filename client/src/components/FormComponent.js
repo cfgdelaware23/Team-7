@@ -1,4 +1,4 @@
-import './FormPages.css';
+import './../FormPages.css';
 import { useState } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
 
@@ -11,7 +11,7 @@ export default function FormComponent(props) {
       </Typography>
       <div class="inputContainer">
         <TextField
-          value={firstName}
+          value={props.property}
           onChange={e => props.setProperty(e.target.value)}
           sx={{ width: '40rem', backgroundColor:'white' }} 
           inputProps={{style: {fontSize: '2rem'}}} // font size of input text

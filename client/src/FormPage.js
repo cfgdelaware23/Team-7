@@ -1,7 +1,7 @@
 import './FormPages.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
-import {FormComponent} from './FormComponent'
+import FormComponent from './components/FormComponent'
 
 export default function FormPage() {
   

@@ -17,7 +17,7 @@ export default function NavBar() {
           <NavLink className="nav-link" to="/">
             new transaction
           </NavLink>
-          <NavLink className="nav-link" to="/create">
+          <NavLink className="nav-link" to="/formPage">
             new user
           </NavLink>
         </div>

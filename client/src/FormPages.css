@@ -15,26 +15,22 @@ body,html{
 
   .inputContainer{
     display: flex;
-    flex-direction: column;
-  }
-
-  .buttonContainer{
-    display: flex;
     flex-direction: row;
-    width:40rem;
-    justify-content:space-between;
+    align-items:center;
+    justify-content: center;
+    align-content:center;
   }
 
   .formButton{
     background-color:white;
     color:'black';
-    margin-right:2rem;
+    margin-left:2rem;
     font-size:2rem;
     padding:1rem 2rem 1rem 2rem;
     border-color:white;
     border-style:none;
     border-radius:0.5rem;
-    margin-top: 2rem;
+    
   }
 
   .singleButtonContainer{

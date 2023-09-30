@@ -23,10 +23,7 @@ export default function FormComponent({property, setProperty}) {
           inputProps={{style: {fontSize: '2rem'}}} // font size of input text
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
-         <div class="buttonContainer">
-          <Button variant="contained" class="formButton" disableRipple>Back</Button>
-          <Button variant="contained" class="formButton" disableRipple onClick={()=>setProperty(input)}>Next</Button>
-        </div>
+        <Button variant="contained" class="formButton" disableRipple onClick={()=>setProperty(input)}>Next</Button>
       </div>
     </div>
   );

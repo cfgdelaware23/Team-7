@@ -14,10 +14,10 @@ const PieChart = () => {
   const options = {
     title: 'My Daily Activities',
     is3D: true, // Add is3D to enable 3D effect
+    backgroundColor: '#E9BC8B', // Set the background color to #1E4182
   };
 
   const chartContainerStyle = {
-    border: '2px solid blue',
     borderRadius: '8px',
     padding: '10px',
     width: '60%',

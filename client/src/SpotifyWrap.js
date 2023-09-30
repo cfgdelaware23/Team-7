@@ -1,5 +1,5 @@
 import React from 'react';
-import PieChart from './components/pieChart';
+import PieChart from './components/pieChart'; // Correct the path if needed
 
 const SpotifyWrapped = () => {
   const wrapperStyle = {
@@ -17,10 +17,15 @@ const SpotifyWrapped = () => {
     marginTop: '20px', // Adjust margin-top as needed
   };
 
+  // Use require to import the image
+  const imageUrl = require('./assets/pie_chart.png');
+  const imageUrl2 = require('./assets/word_cloud.png');
+
   return (
     <div style={wrapperStyle}>
       <h1 style={headingStyle}>Spotify Wrapped</h1>
-      <PieChart />
+      <img src={imageUrl} alt="Pie Chart" />
+      <img src={imageUrl2} alt="Word Cloud" />
     </div>
   );
 };

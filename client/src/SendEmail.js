@@ -17,12 +17,12 @@ export default function SendEmail() {
   return (
     <div class="sendEmailDisplay">
         <div class="emailContainer">
-            <Typography class="emailText">Email Past Purchase</Typography>
+            <Typography class="emailText">email past purchase?</Typography>
             <div class="buttonContainer">
                 <a href={emailLink}>
-                <Button variant="contained" class="emailButton" disableRipple onClick={()=>navigate('/goodbye')}>Yes</Button>
+                <Button variant="contained" class="emailButton" disableRipple onClick={()=>navigate('/goodbye')}>yes</Button>
                 </a>
-                <Button variant="contained" class="emailButton" disableRipple onClick={()=>navigate('/goodbye')}>No</Button>
+                <Button variant="contained" class="emailButton" disableRipple onClick={()=>navigate('/goodbye')}>no</Button>
             </div>
         </div>
     </div>

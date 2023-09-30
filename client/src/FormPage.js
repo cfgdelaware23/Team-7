@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
 import FormComponent from './components/FormComponent'
 import BooleanFormComponent from './components/BooleanFormComponent'
+import { useNavigate } from "react-router";
 
 export default function FormPage() {
   
@@ -12,26 +13,22 @@ export default function FormPage() {
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
 
+
   useEffect(() => {
     console.log("yuh time to post to backend")
-    // if(firstName && lastName && snap && phone && email){
-    //     let newUser = await fetch(
-    //     'http://localhost:5000/register', {
-    //         method: "post",
-    //         body: JSON.stringify({ firstName, lastName, snap, phone, email }),
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    //     newUser = await newUser.json();
-    //     console.warn(newUser);
-    //     if (newUser) {
-    //         alert("Data saved succesfully");
-    //         setEmail("");
-    //         setName("");
-    //     }
-  
-    // }
+    async function onFilled() {
+      const user = JSON.stringify({ firstName, lastName, snap, phone, email });
+      let res = await fetch("http://localhost:8080/create", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json"
+       },
+       body: user,
+     });
+    }
+    if(firstName && lastName && snap && phone && email){
+      onFilled();
+    }
   },[firstName, lastName, snap, phone, email]);
 
   return (

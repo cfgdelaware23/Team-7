@@ -28,6 +28,7 @@ function SwitchRoutes() {
         <Route path='/feedbackpage' element={<FeedbackPage/>}/>
         <Route path='/sendEmail' element={<SendEmail/>}/>
         <Route path='/FeedbackPage' element={<BoughtItems/>}/>
+        <Route path='/sendEmail' element={<SendEmail/>}/>
 
       </Routes>
   )

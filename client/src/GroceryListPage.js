@@ -1,14 +1,17 @@
-import './FormPages.css';
+import './GroceryListPage.css';
 import { useEffect, useState } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
-export default function GrocertListPage(groceryList) {
-
+export default function GroceryListPage() {
+    const navigate = useNavigate();
+    const groceryList = [ 'Apple', 'Apple', 'Banana', 'Swoon Lemonade'];
   return (
-    <div class="formContainer">
+    <div class="groceryListContainer">
       <Typography variant="h1" sx={{Color:"white"}}>
         Your Cart:
       </Typography>
+      <div class="listContainer">
       {groceryList.map(function(data) {
       return (
         <div>
@@ -16,7 +19,8 @@ export default function GrocertListPage(groceryList) {
         </div>
       )
      })} 
-        <Button variant="contained" class="formButton" disableRipple>Check Out</Button>
+     </div>
+        <Button variant="contained" class="nextButton" disableRipple onClick={()=>navigate("/SpotifyWrap")}>Check Out</Button>
     </div>
   );
 }

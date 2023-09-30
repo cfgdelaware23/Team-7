@@ -1,0 +1,29 @@
+.groceryListContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 12rem;
+    /* min-height:100vh; */
+  }
+
+  .listContainer{
+    background-color:#FBEBDB ;
+    font-family: "Helvetica Neue";
+    padding:3rem;
+  }
+
+  .nextButton{
+    background-color:white;
+    color:'black';
+    font-size:2rem;
+    padding:1rem 2rem 1rem 2rem;
+    border-color:white;
+    border-style:none;
+    border-radius:0.5rem;
+    margin-top: 2rem;
+    font-family: "Helvetica Neue";
+    margin-left: 16px;
+    margin-right: 16px;
+  }

@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+body,html{
+  min-height:100vh;
+  background-position: 'center';
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-image: url("images/homebg.webp");
+  margin:0;
+  font-family:"Roboto";
+  background-color: black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home{
+  font-weight: 900;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.welcomeText{
+  font-size:6rem;
+  color:white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.homeInfoContainer{
+  display:flex;
+  flex-direction:row;
 }
+
+.homeInfoImage{
+  min-width: 20%;
+  min-height: 20%;
+}
+
+.infoText{
+  color:white;
+  margin-bottom: 3rem;
+  font-size:2rem;
+}
+
+.homePromptContainer{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.promptText{
+  color:white;
+  margin-bottom: 2rem;
+  font-size:2rem;
+}
+
+.homeButton{
+  background-color:'white';
+  color:'black';
+  margin-right:2rem;
+  font-size:2rem;
+  padding:1rem 2rem 1rem 2rem;
+  border-color:white;
+  border-style:none;
+  border-radius:0.5rem;
+}
+
+.homeButtonContainer{
+  display:flex;
+  flex-direction:row;
+}
+

@@ -1,5 +1,10 @@
 import './App.css';
 import {Button, Typography} from '@mui/material';
+import CongratsPage from './components/CongratsPage'
+// import '@fontsource/roboto/300.css';
+import NavBar from './navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import FormPage from './FormPage';
 import "./HomePage.css"
 
 

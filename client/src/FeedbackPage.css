@@ -1,38 +1,32 @@
-.header {
+.feedbackContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 12rem;
     font-family: "Helvetica Neue";
-    font-size: 6rem;
-    color: white;
-    margin-top: 5rem;
-    margin-bottom: 4rem;
-    font-weight: 600;
+    /* min-height:100vh; */
   }
-  
-  .body {
-    font-family: "Helvetica Neue";
-    color: white;
-    font-size: 2rem;
-    margin-bottom: 4rem;
+
+  .buttonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    align-content:center;
   }
-  
-  .buttonText {
-    font-family: "Helvetica Neue";
-    color: black;
-    font-size: 24px;
-    background-color:'white';
-    margin-right:2rem;
+
+  .formButton{
+    background-color:white;
+    color:'black';
+    font-size:2rem;
     padding:1rem 2rem 1rem 2rem;
     border-color:white;
     border-style:none;
     border-radius:0.5rem;
+    margin-top: 2rem;
+    font-family: "Helvetica Neue";
+    margin-left: 16px;
+    margin-right: 16px;
   }
-
-  .centered-div {
-    width: 200px; /* Adjust the width as needed */
-    height: 200px; /* Adjust the height as needed */
-    background-color: lightgray;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-  

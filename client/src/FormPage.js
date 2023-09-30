@@ -16,29 +16,23 @@ export default function FormPage() {
 
   const [modifiedSnap, setModifiedSnap] = useState(Boolean);
 
+
   useEffect(() => {
     console.log("yuh time to post to backend")
-     if(firstName && lastName && modifiedSnap && phone && email){
-      navigate('/congratsPage');
-     }
-    //     let newUser = await fetch(
-    //     'http://localhost:5000/register', {
-    //         method: "post",
-    //         body: JSON.stringify({ firstName, lastName, snap, phone, email }),
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    //     newUser = await newUser.json();
-    //     console.warn(newUser);
-    //     if (newUser) {
-    //         alert("Data saved succesfully");
-    //         setEmail("");
-    //         setName("");
-    //     }
-  
-    // }
-  },[firstName, lastName, modifiedSnap, phone, email]);
+    async function onFilled() {
+      const user = JSON.stringify({ firstName, lastName, snap, phone, email });
+      let res = await fetch("http://localhost:8080/create", {
+       method: "POST",
+       headers: {
+         "Content-Type": "application/json"
+       },
+       body: user,
+     });
+    }
+    if(firstName && lastName && snap && phone && email){
+      onFilled();
+    }
+  },[firstName, lastName, snap, phone, email]);
 
   return (
     <>

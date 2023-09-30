@@ -1,58 +1,52 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-import random
 from collections import Counter
 from wordcloud import WordCloud
 
+def extract_column_sum(df, column_name):
+    """Extracts the sum of values from a specific column after converting to float."""
+    if column_name in df.columns:
+        return df[column_name].astype(float).sum()
+    else:
+        print(f"Warning: Column '{column_name}' not found in the DataFrame.")
+        return 0.0
 
-df = pd.read_csv('nutrition.csv')
-grocery_list = df['Name']
+def plot_macro_breakdown(df):
+    total_fat = extract_column_sum(df, 'fat_total_g')
+    protein = extract_column_sum(df, 'protein_g')
+    carbohydrates = extract_column_sum(df, 'carbohydrates_total_g')
 
-def plot_macro_breakdown():
-  """
-  Plots pie chart of macros in grocery list breakdown
-  """
-  # sum the relevant categories and convert to float (strip suffix)
-  total_fat = df['Total Fat'].str.replace('g', '').astype(float).sum()
-  protein = df['Protein'].str.replace('g', '').astype(float).sum()
-  carbohydrates = df['Carbohydrates'].str.replace('g', '').astype(float).sum()
+    categories = {
+        'Total Fat (g)': total_fat,
+        'Protein (g)': protein,
+        'Carbohydrates (g)': carbohydrates
+    }
 
-  categories = {
-      'Total Fat': total_fat,
-      'Protein': protein,
-      'Carbohydrates': carbohydrates
-  }
-
-  plt.pie(categories.values(), labels=categories.keys(), autopct='%1.1f%%', startangle=140)
-  plt.title('Nutritional Categories for Your Purchases')
-  plt.axis('equal')  
-  plt.savefig('assets/pie_chart.png')
-  # plt.show()
-
-
-def latest_purchases():
-  """
-  Compiles latest purchases and sorts them by frequency
-  """
-  p = Counter(" ".join(grocery_list).split()).most_common(10)
-  rslt = pd.DataFrame(p, columns=['Word', 'Frequency'])
-  rslt = rslt[rslt['Word'] != "Total"]
   
-  return dict(rslt.values)
+    plt.pie(categories.values(), labels=categories.keys(), autopct='%1.1f%%', startangle=140)
+    plt.title('Nutritional Categories for Your Purchases')
+    plt.axis('equal')  
+    plt.savefig('assets/pie_chart.png')
 
+def generate_word_cloud(df):
+    if 'name' in df.columns:
+        grocery_list = df['name']
+        p = Counter(" ".join(grocery_list).split()).most_common(10)
+        rslt = pd.DataFrame(p, columns=['Word', 'Frequency'])
+        wordcloud_data = dict(rslt.values)
 
-def generate_word_cloud():
-  """
-  Creates word cloud visualization of most purchased items to be bigger
-  """
-  wordcloud_data = latest_purchases()
-  wordcloud = WordCloud(background_color="white", width=800, height=400).generate_from_frequencies(wordcloud_data)
-  plt.figure(figsize=(10, 5))
-  plt.imshow(wordcloud, interpolation='bilinear')
-  plt.axis("off")
-  plt.savefig('assets/word_cloud.png')
-  # plt.show()
+        wordcloud = WordCloud(background_color="white", width=800, height=400).generate_from_frequencies(wordcloud_data)
+        plt.figure(figsize=(10, 5))
+        plt.imshow(wordcloud, interpolation='bilinear')
+        plt.axis("off")
+        plt.savefig('assets/word_cloud.png')
+    else:
+        print("Warning: Column 'name' not found in the DataFrame.")
 
+def main():
+    df = pd.read_csv('data/nutrition_data.csv')
+    plot_macro_breakdown(df)
+    generate_word_cloud(df)
 
-plot_macro_breakdown()
-generate_word_cloud()
+if __name__ == "__main__":
+    main()

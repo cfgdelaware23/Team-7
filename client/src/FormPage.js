@@ -3,15 +3,18 @@ import { useState, useEffect } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
 import FormComponent from './components/FormComponent'
 import BooleanFormComponent from './components/BooleanFormComponent'
-import { useNavigate } from "react-router";
+import { useNavigate } from 'react-router-dom';
 
 export default function FormPage() {
+  const navigate = useNavigate();
   
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [snap, setSnap] = useState(Boolean);
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
+
+  const [modifiedSnap, setModifiedSnap] = useState(Boolean);
 
 
   useEffect(() => {
@@ -33,23 +36,23 @@ export default function FormPage() {
 
   return (
     <>
-      {!firstName && !lastName && !snap && !phone && !email &&
+      {!firstName && !lastName && !modifiedSnap && !phone && !email &&
       <FormComponent property={"First Name:"} setProperty={setFirstName}/>
        }
 
-    {firstName && !lastName && !snap && !phone && !email &&
+    {firstName && !lastName && !modifiedSnap && !phone && !email &&
        <FormComponent property={"Last Name:"} setProperty={setLastName}/>
     }
 
-    {firstName && lastName && !snap && !phone && !email &&
-       <BooleanFormComponent property={"Do you qualify for SNAP or EBT?"} setProperty={setSnap}/>
+    {firstName && lastName && !modifiedSnap && !phone && !email &&
+       <BooleanFormComponent property={"Do you qualify for SNAP or EBT?"} setProperty={setSnap} setModifiedProperty={setModifiedSnap}/>
     }
 
-    {firstName && lastName && snap && !phone && !email &&
+    {firstName && lastName && modifiedSnap && !phone && !email &&
        <FormComponent property={"Phone #:"} setProperty={setPhone}/>
     }
 
-  {firstName && lastName && snap && phone && !email &&
+  {firstName && lastName && modifiedSnap && phone && !email &&
        <FormComponent property={"Email:"} setProperty={setEmail}/>
     }
     </>

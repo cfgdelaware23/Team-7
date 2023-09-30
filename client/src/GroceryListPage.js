@@ -44,7 +44,7 @@ export default function GroceryListPage() {
         disableRipple
         onClick={() => {
           setPlayAudio(true); // Set the state to indicate that audio should be played
-          navigate("/SpotifyWrap");
+          navigate("/SpotifyWrapped");
         }}
       >
         Check Out

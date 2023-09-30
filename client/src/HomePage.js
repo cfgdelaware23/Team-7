@@ -24,7 +24,7 @@ function HomePage() {
         </div>
   
         <Typography variant="body1" class="body">
-        do you have an account with us?
+        do you have a membership with us?
         </Typography>
        
         <div class = "homeButtonContainer">

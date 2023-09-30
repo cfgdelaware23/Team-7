@@ -1,9 +1,8 @@
 import './App.css';
-import {Button, Typography} from '@mui/material';
 // import '@fontsource/roboto/300.css';
 import NavBar from './navbar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Form from'./form.js';
+import {  Route, Routes } from 'react-router-dom';
+
 
 import CongratsPage from './components/CongratsPage'
 import HaveANiceDayPage from './components/GoodbyePage';
@@ -11,7 +10,8 @@ import FormPage from './FormPage';
 import HomePage from './HomePage';
 import LookupPage from './LookupPage';
 import SpotifyWrapped from './SpotifyWrap';
-
+import GroceryListPage from './GroceryListPage';
+import SendEmail from './SendEmail';
 
 function SwitchRoutes() {
   return (
@@ -22,6 +22,8 @@ function SwitchRoutes() {
         <Route path='/formPage' element={<FormPage/>}/>
         <Route path='/lookupPage' element={<LookupPage/>}/>
         <Route path='/SpotifyWrap' element={<SpotifyWrapped/>}/>
+        <Route path='/groceryListPage' element={<GroceryListPage/>}/>
+        <Route path='/sendEmail' element={<SendEmail/>}/>
       </Routes>
   )
 }

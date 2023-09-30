@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Form from'./form.js';
 import CongratsPage from './Componets/congrats'
 import HaveANiceDayPage from './Componets/GoodbyePage';
-import FirstNameComponent from './FirstNameComponent';
 import FormPage from './FormPage';
 
 import HomePage from './HomePage';

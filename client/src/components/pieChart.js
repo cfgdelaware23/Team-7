@@ -3,12 +3,10 @@ import Chart from 'react-google-charts';
 
 const PieChart = () => {
   const data = [
-    ['Task', 'Hours per Day'],
-    ['Work', 11],
-    ['Eat', 2],
-    ['Commute', 2],
-    ['Watch TV', 2],
-    ['Sleep', 7],
+    ['Nutrition', 'Percent of Diet'],
+    ['Carbohydrates', 73.0],
+    ['Protein', 8.7],
+    ['Fats', 18.3]
   ];
 
   const options = {

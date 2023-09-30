@@ -16,7 +16,7 @@ function HomePage() {
   
         <div class = "homeInfoContainer">
           <Typography variant="body1" type="left" class="infoText">
-          Creating a seamless grocery shopping experience, with<br></br>
+          Creating a seamless grocery<br></br>shopping experience, with<br></br>
           <i> personalized pricing.</i>
           </Typography>
           <img src={require("./images/homeImage.png")} class ="homeInfoImage" alt="A World Well Nourished"></img>

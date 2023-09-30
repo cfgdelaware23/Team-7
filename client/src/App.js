@@ -17,7 +17,10 @@ function SwitchRoutes() {
 }
 function App() {
   return (
-  <SwitchRoutes/>
+    <div>
+    <NavBar></NavBar>
+    <SwitchRoutes/>
+  </div>
   );
 }
 

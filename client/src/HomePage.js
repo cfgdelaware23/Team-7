@@ -30,10 +30,10 @@ function HomePage() {
        
         <div class = "homeButtonContainer">
         <a href="/lookupPage">
-          <Button variant="contained" class="buttonText" disableRipple>Yes</Button>
+          <Button variant="contained" class="buttonText" disableRipple>yes</Button>
           </a>
           <a href="/formPage">
-          <Button variant="contained" class="buttonText" disableRipple>No</Button>
+          <Button variant="contained" class="buttonText" disableRipple>no</Button>
           </a>
         </div>
       </div>

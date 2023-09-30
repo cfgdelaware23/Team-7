@@ -21,12 +21,11 @@ def plot_macro_breakdown(df):
         'Protein (g)': protein,
         'Carbohydrates (g)': carbohydrates
     }
-
   
     plt.pie(categories.values(), labels=categories.keys(), autopct='%1.1f%%', startangle=140)
     plt.title('Nutritional Categories for Your Purchases')
     plt.axis('equal')  
-    plt.savefig('assets/pie_chart.png')
+    plt.savefig('client/src/assets/pie_chart.png')
 
 def generate_word_cloud(df):
     if 'name' in df.columns:
@@ -39,7 +38,7 @@ def generate_word_cloud(df):
         plt.figure(figsize=(10, 5))
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis("off")
-        plt.savefig('assets/word_cloud.png')
+        plt.savefig('client/src/assets/word_cloud.png')
     else:
         print("Warning: Column 'name' not found in the DataFrame.")
 

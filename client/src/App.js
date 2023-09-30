@@ -11,6 +11,7 @@ import FormPage from './FormPage';
 import HomePage from './HomePage';
 import LookupPage from './LookupPage';
 import SpotifyWrapped from './SpotifyWrap';
+import BoughtItems from './Feedback';
 
 
 function SwitchRoutes() {
@@ -22,6 +23,7 @@ function SwitchRoutes() {
         <Route path='/formPage' element={<FormPage/>}/>
         <Route path='/lookupPage' element={<LookupPage/>}/>
         <Route path='/SpotifyWrap' element={<SpotifyWrapped/>}/>
+        <Route path='/FeedbackPage' element={<BoughtItems/>}/>
       </Routes>
   )
 }

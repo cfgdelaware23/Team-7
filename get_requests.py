@@ -43,29 +43,30 @@ def insert_dummy_data():
 # Call the function to insert dummy data
 insert_dummy_data()
 
-# def get_user_by_email(email):
-#     """Fetches a user by email from MongoDB."""
-#     client = MongoClient(MONGO_URI)
-#     db = client[DB_NAME]
-
-#     user = db.users.find_one({"email": email})
-    
-#     client.close()
-#     return user
-
-def fetch_grocery_list_from_db():
-    """Fetches grocery list from MongoDB."""
+def get_user_by_email(email):
+    """Fetches a user by email from MongoDB."""
     client = MongoClient(MONGO_URI)
     db = client[DB_NAME]
 
-    # Fetch all users' purchases
-    users = db.users.find({}, {"purchases": 1})
+    user = db.users.find_one({"email": email})
+    
+    client.close()
+    return user
 
-    # Extract purchases and flatten them into one list
-    all_purchases = [item for user in users for item in user.get('purchases', [])]
+def fetch_grocery_list_from_db(email):
+    """Fetches grocery list for a specific user from MongoDB based on email."""
+    client = MongoClient(MONGO_URI)
+    db = client[DB_NAME]
+
+    # Fetch the purchases of the user with the given email
+    user = db.users.find_one({"email": email})
 
     client.close()
-    return all_purchases
+
+    if user and "purchases" in user:
+        return user["purchases"]
+    else:
+        return []
 
 def query_get(item):
     """Queries the API for nutritional information."""
@@ -86,7 +87,8 @@ def go_over_groceries(grocery_list):
     return pd.DataFrame(items_data)
 
 def main():
-    grocery_list = fetch_grocery_list_from_db()
+    email = input("Enter the email of the user: ")
+    grocery_list = fetch_grocery_list_from_db(email)
     print(f"Grocery List from DB: {grocery_list}") 
     df = go_over_groceries(grocery_list)
     print(f"DataFrame:\n{df}")  

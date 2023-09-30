@@ -2,6 +2,7 @@ import './FormPages.css';
 import { useState, useEffect } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
 import FormComponent from './components/FormComponent'
+import BooleanFormComponent from './components/BooleanFormComponent'
 
 export default function FormPage() {
   
@@ -36,23 +37,23 @@ export default function FormPage() {
   return (
     <>
       {!firstName && !lastName && !snap && !phone && !email &&
-      <FormComponent property={firstName} setproperty={setFirstName}/>
+      <FormComponent property={"First Name:"} setProperty={setFirstName}/>
        }
 
     {firstName && !lastName && !snap && !phone && !email &&
-       <FormComponent property={lastName} setproperty={setLastName}/>
+       <FormComponent property={"Last Name:"} setProperty={setLastName}/>
     }
 
     {firstName && lastName && !snap && !phone && !email &&
-       <FormComponent property={snap} setproperty={setSnap}/>
+       <BooleanFormComponent property={"Do you qualify for SNAP or EBT?"} setProperty={setSnap}/>
     }
 
     {firstName && lastName && snap && !phone && !email &&
-       <FormComponent property={phone} setproperty={setPhone}/>
+       <FormComponent property={"Phone #:"} setProperty={setPhone}/>
     }
 
   {firstName && lastName && snap && phone && !email &&
-       <FormComponent property={email} setproperty={setEmail}/>
+       <FormComponent property={"Email:"} setProperty={setEmail}/>
     }
     </>
   );

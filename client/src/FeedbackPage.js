@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function FeedbackPage() {
   const navigate = useNavigate();
-  const groceryList = ['Apples', 'Apples', 'Bananas', 'Swoon Lemonade'];
+  const groceryList = ['apples', 'apples', 'bananas', 'swoon lemonade'];
   const randomIndex = Math.floor(Math.random() * groceryList.length);
   const [scoreDifference, setScoreDifference] = useState(0);
   

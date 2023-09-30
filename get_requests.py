@@ -1,50 +1,97 @@
 import os
-import sqlite3
 import requests
-import json
 import pandas as pd
+from dotenv import load_dotenv
+from pymongo import MongoClient
 
+# Load environment variables from .env file
+load_dotenv()
 
 API_KEY = os.getenv('API_KEY')
 API_URL = 'https://api.calorieninjas.com/v1/nutrition?query='
+MONGO_URI = os.getenv('ATLAS_URI')
+DB_NAME = os.getenv('DB_NAME')  
 
+def insert_dummy_data():
+    """Inserts dummy data into the MongoDB database."""
+    client = MongoClient(MONGO_URI)
+    db = client[DB_NAME]
 
-def fetch_grocery_list_from_db(database_path):
-    """Fetches grocery list from a given database."""
-    conn = sqlite3.connect(database_path)
-    cursor = conn.cursor()
-    query = "SELECT item_name FROM grocery_table" 
-    cursor.execute(query)
-    items = [row[0] for row in cursor.fetchall()]
-    conn.close()
-    return items
+    # Sample dummy data
+    dummy_users = [
+        {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john.doe@example.com",
+            "purchases": ["apple", "banana", "carrot"]
+        },
+        {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane.smith@example.com",
+            "purchases": ["potato", "tomato", "lettuce"]
+        }
+        # ... (add more dummy users as needed)
+    ]
 
+    # Insert dummy data into the 'users' collection
+    db.users.insert_many(dummy_users)
+
+    client.close()
+    print("Dummy data inserted!")
+
+# Call the function to insert dummy data
+insert_dummy_data()
+
+# def get_user_by_email(email):
+#     """Fetches a user by email from MongoDB."""
+#     client = MongoClient(MONGO_URI)
+#     db = client[DB_NAME]
+
+#     user = db.users.find_one({"email": email})
+    
+#     client.close()
+#     return user
+
+def fetch_grocery_list_from_db():
+    """Fetches grocery list from MongoDB."""
+    client = MongoClient(MONGO_URI)
+    db = client[DB_NAME]
+
+    # Fetch all users' purchases
+    users = db.users.find({}, {"purchases": 1})
+
+    # Extract purchases and flatten them into one list
+    all_purchases = [item for user in users for item in user.get('purchases', [])]
+
+    client.close()
+    return all_purchases
 
 def query_get(item):
     """Queries the API for nutritional information."""
     response = requests.get(API_URL + item, headers={'X-Api-Key': API_KEY})
     if response.status_code == requests.codes.ok:
-        return response.text
+        return response.json()
     else:
         print("Error:", response.status_code, response.text)
         return None
 
-
 def go_over_groceries(grocery_list):
-    """Convert to csv to read into python later"""
+    """Fetch nutrition data and convert to DataFrame."""
     items_data = []
     for grocery in grocery_list:
         response = query_get(grocery)
-        items_data.extend(response["items"])
+        if response and "items" in response:
+            items_data.extend(response["items"])
     return pd.DataFrame(items_data)
 
-
 def main():
-    # CHANGE TO ACTUAL PATH ****
-    grocery_list = fetch_grocery_list_from_db('path_to_the_database_file.db')
+    grocery_list = fetch_grocery_list_from_db()
+    print(f"Grocery List from DB: {grocery_list}") 
     df = go_over_groceries(grocery_list)
-    df.to_csv('nutrition_data.csv', index=False)
-
+    print(f"DataFrame:\n{df}")  
+    df.to_csv('data/nutrition_data.csv', index=False)
+    print("Data saved to nutrition_data.csv")  
 
 if __name__ == "__main__":
     main()

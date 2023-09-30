@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     margin: auto;
-    padding: 12rem;
+    background-size: cover;
+    margin-top:3rem;
     /* min-height:100vh; */
   }
 
@@ -27,3 +28,15 @@
     margin-left: 16px;
     margin-right: 16px;
   }
+
+  .groceryItem {
+    display: flex;
+    justify-content: space-between; /* Add space between item and price */
+    margin-bottom: 8px; /* Add margin between items */
+  }
+  
+  .itemName {
+    flex: 1; /* Allow item name to expand */
+    margin-right: 8px; /* Add margin to separate item and price */
+  }
+  

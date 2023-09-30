@@ -27,7 +27,8 @@ def plot_macro_breakdown(df):
     plt.pie(categories.values(), labels=categories.keys(), autopct='%1.1f%%', startangle=140, colors=colors, wedgeprops=dict(width=0.3))
     plt.title('Nutritional Categories for Your Purchases', fontsize=15)
     
-    plt.savefig('assets/pie_chart.png', bbox_inches='tight')
+
+    plt.savefig('client/src/assets/pie_chart.png', bbox_inches='tight')
 
 def generate_word_cloud(df):
     if 'name' in df.columns:
@@ -51,3 +52,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+

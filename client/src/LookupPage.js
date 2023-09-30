@@ -1,8 +1,10 @@
 import './FormPages.css';
 import { useEffect, useState } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 export default function LookupPage() {
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
 
@@ -21,12 +23,13 @@ export default function LookupPage() {
         })
         .then(response => response.json())
         .then(data => {
-            // Use the data in your React component
+            navigate("/GroceryListPage");
             this.setState({ groceries: data });
             console.log(data);
-            console.log("got");
         })
-        .catch(error => console.error("Error fetching data:", error));
+        .catch(error => {
+            navigate("/GroceryListPage");
+            console.error("Error fetching data:", error)});
     }
 
   return (
@@ -46,7 +49,7 @@ export default function LookupPage() {
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
          <div class="singleButtonContainer">
-          <Button variant="contained" class="formButton" disableRipple onClick={fetchGroceryData}>lookup</Button>
+          <Button variant="contained" class="formButton" disableRipple onClick={()=>navigate("/GroceryListPage")}>lookup</Button>
         </div>
 
       </div>

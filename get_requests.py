@@ -95,16 +95,14 @@ def go_over_groceries(grocery_list):
 
 def main():
     email = input("Enter the email of the user: ")
+    user = get_user_by_email()  
     grocery_list = fetch_grocery_list_from_db(email)
-    print(f"Grocery List from DB: {grocery_list}") 
+    print(f"Grocery List from DB for {email}: {grocery_list}") 
     df = go_over_groceries(grocery_list)
     print(f"DataFrame:\n{df}")  
     df.to_csv('data/nutrition_data.csv', index=False)
     print("Data saved to nutrition_data.csv")  
-    if user and "purchases" in user:
-        return jsonify(user["purchases"])
-    else:
-        return jsonify([])
+
 
 if __name__ == "__main__":
       app.run(debug=True)

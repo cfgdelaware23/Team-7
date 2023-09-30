@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PieChart from './components/pieChart';
 import { motion } from 'framer-motion'; // Import motion from Framer Motion
+import sound from './audio/ChangetheWorld.mp3';
+import { useNavigate, useLocation } from 'react-router-dom';
+
 
 const SpotifyWrapped = () => {
+    const navigate = useNavigate();
+
   const wrapperStyle = {
     display: 'flex',
     flexDirection: 'column',
@@ -50,6 +55,24 @@ const SpotifyWrapped = () => {
       damping: 20,
     },
   };
+
+  const [audioPlayed, setAudioPlayed] = useState(false);
+  const [audioStopped, setAudioStopped] = useState(false); // New state variable
+
+  useEffect(() => {
+    // Play audio when audioPlayed state is true
+    if (audioPlayed) {
+      const audio = new Audio(sound);
+      audio.play();
+    }
+
+    // Stop audio when audioStopped state is true
+    if (audioStopped) {
+      const audio = new Audio(sound);
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }, [audioPlayed, audioStopped]);
 
   return (
     <div style={wrapperStyle}>

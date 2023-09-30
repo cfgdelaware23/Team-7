@@ -4,20 +4,28 @@ import {Button, Typography} from '@mui/material';
 import NavBar from './navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Form from'./form.js';
+import CongratsPage from './components/CongratsPage'
+import HaveANiceDayPage from './components/GoodbyePage';
 import FormPage from './FormPage';
+
 import HomePage from './HomePage';
 
 function SwitchRoutes() {
   return (
       <Routes>
         <Route path='/' element={<HomePage/>}/>
+        <Route path='/congratsPage' element={<CongratsPage/>}/>
+        <Route path='/goodbye' element={<HaveANiceDayPage/>}/>
         <Route path='/formPage' element={<FormPage/>}/>
       </Routes>
   )
 }
 function App() {
   return (
-  <SwitchRoutes/>
+    <div>
+    <NavBar></NavBar>
+    <SwitchRoutes/>
+  </div>
   );
 }
 

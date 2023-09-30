@@ -2,12 +2,18 @@ import express from 'express';
 import connectToDB from './database.js';
 import User from "./models/User.js"
 import bodyParser from "body-parser"
+import cors from "cors";
 // const User = require('./models/User.js')
 // import { getUser, createUser } from './userFunctions.js'
 
 const app = express();
 
 connectToDB();
+
+const corsOptions = {
+  origin: "*",
+}
+app.use(cors(corsOptions))
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
@@ -26,6 +32,9 @@ app.post("/create", async (req, res) => {
   const user = new User(req.body);
   try {
     await user.save();
+    res.header = {
+      "Access-Control-Allow-Origin": "*"
+    }
     res.send(user);
   } catch (error) {
     res.status(500).send(error);

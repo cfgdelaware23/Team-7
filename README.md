@@ -19,7 +19,8 @@ Figma Design
 
 
 ![Alt text](image-1.png)
-![Alt text](image-2.png)
+<img width="343" alt="Screenshot 2023-09-30 at 10 22 30 AM" src="https://github.com/cfgdelaware23/Team-7/assets/91427854/f5d74615-0a10-4fc4-af18-a560270b81e7">
+
 Original Prototype
 
 

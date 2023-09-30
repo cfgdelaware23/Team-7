@@ -12,7 +12,7 @@ export default function NavBar() {
           <text className="logoFare">fare</text>
         </NavLink>
         <div className="navitems">
-          <NavLink className="nav-link" to="/create">
+          <NavLink className="nav-link" to="/">
             new transaction
           </NavLink>
         </div>

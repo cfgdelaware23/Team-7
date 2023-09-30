@@ -12,8 +12,11 @@ export default function LookupPage() {
 
   return (
     <div class="formContainer">
-      <Typography variant="h1" sx={{Color:"white"}}>
-        Lookup By Email:
+      <Typography variant="h4" className="body">
+        welcome back!
+      </Typography>
+      <Typography variant="h2" sx={{color:"white", paddingBottom:"24px"}}>
+        lookup by email:
       </Typography>
       <div class="inputContainer">
         <TextField
@@ -24,7 +27,7 @@ export default function LookupPage() {
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
          <div class="singleButtonContainer">
-          <Button variant="contained" class="formButton" disableRipple>Lookup</Button>
+          <Button variant="contained" class="formButton" disableRipple>lookup</Button>
         </div>
       </div>
     </div>

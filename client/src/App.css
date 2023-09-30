@@ -3,7 +3,7 @@ body,html{
   background-position: 'center';
   background-size:cover;
   background-repeat: no-repeat;
-  background-image: url("images/homebg.webp");
+  background-image: url("images/home2.png");
   margin:0;
   font-family: Sans-Serif;
   background-color: black;
@@ -14,13 +14,14 @@ body,html{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: left; */
+  margin-left: 8rem;
 }
 
 .welcomeText{
   font-size:6rem;
   color:white;
-  margin: 2rem;
+  /* margin: 2rem; */
 }
 
 .homeInfoContainer{
@@ -28,10 +29,10 @@ body,html{
   flex-direction:row;
 }
 
-.homeInfoImage{
+/* .homeInfoImage{
   min-width: 20%;
   min-height: 20%;
-}
+} */
 
 .infoText{
   color:white;

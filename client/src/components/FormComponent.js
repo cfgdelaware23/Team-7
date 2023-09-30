@@ -12,7 +12,7 @@ export default function FormComponent({property, setProperty}) {
 
   return (
     <div class="formContainer">
-      <Typography variant="h1" sx={{Color:"white"}}>
+      <Typography variant="h2" sx={{color:"white", paddingBottom:"24px"}}>
         {property}
       </Typography>
       <div class="inputContainer">
@@ -24,8 +24,8 @@ export default function FormComponent({property, setProperty}) {
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
          <div class="buttonContainer">
-          <Button variant="contained" class="formButton" disableRipple>Back</Button>
-          <Button variant="contained" class="formButton" disableRipple onClick={()=>setProperty(input)}>Next</Button>
+          <Button variant="contained" class="formButton" disableRipple>back</Button>
+          <Button variant="contained" class="formButton" disableRipple onClick={()=>setProperty(input)}>next</Button>
         </div>
       </div>
     </div>

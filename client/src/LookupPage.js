@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 
-
 export default function LookupPage() {
     const navigate = useNavigate();
 
@@ -24,12 +23,13 @@ export default function LookupPage() {
         })
         .then(response => response.json())
         .then(data => {
-            // Use the data in your React component
+            navigate("/GroceryListPage");
             this.setState({ groceries: data });
             console.log(data);
-            console.log("got");
         })
-        .catch(error => console.error("Error fetching data:", error));
+        .catch(error => {
+            navigate("/GroceryListPage");
+            console.error("Error fetching data:", error)});
     }
 
   return (

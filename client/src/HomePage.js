@@ -28,7 +28,9 @@ function HomePage() {
         </Typography>
        
         <div class = "homeButtonContainer">
+        <a href="/lookupPage">
           <Button variant="contained" class="homeButton" disableRipple>Yes</Button>
+          </a>
           <a href="/formPage">
           <Button variant="contained" class="homeButton" disableRipple>No</Button>
           </a>

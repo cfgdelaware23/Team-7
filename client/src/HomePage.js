@@ -1,5 +1,11 @@
+import './App.css';
 import {Button, Typography} from '@mui/material';
-import CongratsPage from './congrats';
+// import '@fontsource/roboto/300.css';
+import NavBar from './navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Form from'./form.js';
+import FormPage from './FormPage';
+
 
 function HomePage() {
     return (
@@ -21,7 +27,9 @@ function HomePage() {
         </Typography>
        
         <div class = "homeButtonContainer">
+        <a href="/formPage">
           <Button variant="contained" class="homeButton" disableRipple>Yes</Button>
+          </a>
           <Button variant="contained" class="homeButton" disableRipple>No</Button>
         </div>
       </div>

@@ -10,11 +10,11 @@ body,html{
 }
 
 .home{
-  padding:5rem;
   font-weight: 900;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .welcomeText{
@@ -25,14 +25,23 @@ body,html{
 .homeInfoContainer{
   display:flex;
   flex-direction:row;
-  height:15rem;
 }
 
+.homeInfoImage{
+  min-width: 20%;
+  min-height: 20%;
+}
 
 .infoText{
   color:white;
   margin-bottom: 3rem;
   font-size:2rem;
+}
+
+.homePromptContainer{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .promptText{
@@ -44,14 +53,14 @@ body,html{
 .homeButton{
   background-color:'white';
   color:'black';
-  width:5rem;
-  height:3rem;
   margin-right:2rem;
-  font-size:1rem;
+  font-size:2rem;
+  padding:1rem 2rem 1rem 2rem;
   border-color:white;
   border-style:none;
   border-radius:0.5rem;
 }
+
 .homeButtonContainer{
   display:flex;
   flex-direction:row;

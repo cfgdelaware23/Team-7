@@ -4,24 +4,20 @@ import {Button, Typography} from '@mui/material';
 import NavBar from './navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Form from'./form.js';
-import CongratsPage from './congrats';
-import FirstNameComponent from './FirstNameComponent';
+import FormPage from './FormPage';
 import HomePage from './HomePage';
 
 function SwitchRoutes() {
   return (
       <Routes>
         <Route path='/' element={<HomePage/>}/>
-        <Route path='/congratsPage' element={<CongratsPage/>}/>
+        <Route path='/formPage' element={<FormPage/>}/>
       </Routes>
   )
 }
 function App() {
   return (
-    <div>
-      <NavBar></NavBar>
-      <SwitchRoutes/>
-    </div>
+  <SwitchRoutes/>
   );
 }
 

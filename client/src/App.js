@@ -12,6 +12,7 @@ import LookupPage from './LookupPage';
 import SpotifyWrapped from './SpotifyWrap';
 import GroceryListPage from './GroceryListPage';
 import SendEmail from './SendEmail';
+import BoughtItems from './FeedbackPage';
 
 function SwitchRoutes() {
   return (
@@ -24,7 +25,7 @@ function SwitchRoutes() {
         <Route path='/SpotifyWrap' element={<SpotifyWrapped/>}/>
         <Route path='/groceryListPage' element={<GroceryListPage/>}/>
         <Route path='/sendEmail' element={<SendEmail/>}/>
-        <Route path='/BoughtItems' element={<FeedbackPage/>}/>
+
       </Routes>
   )
 }

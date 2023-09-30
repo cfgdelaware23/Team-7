@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function GroceryListPage() {
     const navigate = useNavigate();
-    const groceryList = [ 'apple', 'apple','carrot'];
+    const groceryList = [ 'Apple', 'Apple', 'Banana', 'Swoon Lemonade'];
   return (
     <div class="groceryListContainer">
       <Typography variant="h1" sx={{Color:"white"}}>

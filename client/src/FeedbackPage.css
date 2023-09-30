@@ -1,0 +1,38 @@
+.header {
+    font-family: "Helvetica Neue";
+    font-size: 6rem;
+    color: white;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    font-weight: 600;
+  }
+  
+  .body {
+    font-family: "Helvetica Neue";
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .buttonText {
+    font-family: "Helvetica Neue";
+    color: black;
+    font-size: 24px;
+    background-color:'white';
+    margin-right:2rem;
+    padding:1rem 2rem 1rem 2rem;
+    border-color:white;
+    border-style:none;
+    border-radius:0.5rem;
+  }
+
+  .centered-div {
+    width: 200px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    background-color: lightgray;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  

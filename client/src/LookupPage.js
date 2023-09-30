@@ -10,23 +10,23 @@ export default function LookupPage() {
         setEmail(event.target.value);
       };
 
-    // const fetchGroceryData = (email) => {
-    //     fetch("http://localhost:5000/get_grocery_data", {
-    //         method: "POST",
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify({ email: email })
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // Use the data in your React component
-    //         this.setState({ groceries: data });
-    //         console.log(data);
-    //         console.log("got");
-    //     })
-    //     .catch(error => console.error("Error fetching data:", error));
-    // }
+    const fetchGroceryData = (email) => {
+        fetch("http://localhost:8080/get_grocery_data", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Use the data in your React component
+            this.setState({ groceries: data });
+            console.log(data);
+            console.log("got");
+        })
+        .catch(error => console.error("Error fetching data:", error));
+    }
 
   return (
     <div class="formContainer">

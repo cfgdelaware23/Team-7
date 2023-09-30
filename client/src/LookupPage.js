@@ -1,5 +1,5 @@
 import './FormPages.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
 
 export default function LookupPage() {
@@ -9,6 +9,24 @@ export default function LookupPage() {
     const handleChange = (event) => {
         setEmail(event.target.value);
       };
+
+    const fetchGroceryData = (email) => {
+        fetch("http://localhost:5000/get_grocery_data", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Use the data in your React component
+            this.setState({ groceries: data });
+            console.log(data);
+            console.log("got");
+        })
+        .catch(error => console.error("Error fetching data:", error));
+    }
 
   return (
     <div class="formContainer">
@@ -23,7 +41,7 @@ export default function LookupPage() {
           inputProps={{style: {fontSize: '2rem'}}} // font size of input text
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
-        <Button variant="contained" class="formButton" disableRipple>Lookup</Button>
+        <Button variant="contained" class="formButton" disableRipple onClick={()=>fetchGroceryData(email)}>Lookup</Button>
       </div>
     </div>
   );

@@ -23,7 +23,7 @@ export default function GroceryListPage() {
   return (
     <div class="groceryListContainer">
       <Typography variant="h1" sx={{ color: "white", paddingBottom: "24px" }}>
-        Your Cart:
+        your cart:
       </Typography>
       <div class="listContainer">
         {groceryList.map(function (data, index) {
@@ -37,7 +37,7 @@ export default function GroceryListPage() {
       </div>
       <div className="totalPrice">
         <Typography variant="h4" sx={{ color: "white" }}>
-          Total: ${totalPrice.toFixed(2)}
+          total: ${totalPrice.toFixed(2)}
         </Typography>
       </div>
       <Button
@@ -48,7 +48,7 @@ export default function GroceryListPage() {
           navigate("/SpotifyWrapped");
         }}
       >
-        Check Out
+        check out
       </Button>
     </div>
   );

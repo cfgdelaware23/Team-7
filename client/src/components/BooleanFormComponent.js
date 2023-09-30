@@ -1,6 +1,5 @@
 import './../FormPages.css';
-import { useState } from 'react';
-import { TextField, Box , Button, Typography} from "@mui/material";
+import { Button, Typography} from "@mui/material";
 
 export default function BooleanFormComponent({property, setProperty, setModifiedProperty}) {
     

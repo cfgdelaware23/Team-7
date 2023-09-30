@@ -45,7 +45,7 @@ export default function GroceryListPage() {
         class="nextButton"
         disableRipple
         onClick={() => {
-          navigate("/SpotifyWrap");
+          navigate("/SpotifyWrapped");
         }}
       >
         Check Out

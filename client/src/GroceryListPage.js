@@ -26,8 +26,8 @@ export default function GroceryListPage() {
 
   return (
     <div class="groceryListContainer">
-      <Typography variant="h1" sx={{ Color: "white" }}>
-        Your Cart:
+      <Typography variant="h1" sx={{ color: "white", paddingBottom:"24px" }}>
+        your cart:
       </Typography>
       <div class="listContainer">
         {groceryList.map(function (data) {
@@ -47,7 +47,7 @@ export default function GroceryListPage() {
           navigate("/SpotifyWrap");
         }}
       >
-        Check Out
+        check out
       </Button>
     </div>
   );

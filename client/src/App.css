@@ -10,6 +10,7 @@ body,html{
 }
 
 .home{
+  min-height:100vh;
   font-weight: 700;
   display: flex;
   flex-direction: column;

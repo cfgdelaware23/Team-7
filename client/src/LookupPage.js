@@ -48,6 +48,7 @@ export default function LookupPage() {
          <div class="singleButtonContainer">
           <Button variant="contained" class="formButton" disableRipple onClick={fetchGroceryData}>lookup</Button>
         </div>
+
       </div>
     </div>
   );

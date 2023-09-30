@@ -8,11 +8,14 @@ export default function GroceryListPage() {
   const location = useLocation();
 
   const groceryList = [
-    { item: 'Apple', price: 1.99 },
-    { item: 'Apple', price: 1.99 },
+    { item: 'Apple (2x)', price: 1.99 },
     { item: 'Banana', price: 0.99 },
     { item: 'Swoon Lemonade', price: 2.49 },
+    { item: 'Milk', price: 2.99 },
+    { item: 'Eggs (dozen)', price: 3.49 },
   ];
+  
+  
 
   // Calculate the total price
   const totalPrice = groceryList.reduce((total, item) => total + item.price, 0);

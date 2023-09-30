@@ -1,9 +1,11 @@
 import "./SendEmail.css"
 import React from 'react';
 import { Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function SendEmail() {
+    const navigate = useNavigate();
     // press the yes button and then send an email of customer's past purchase to the email entered
     const groceryList = ['Apple', 'Apple', 'Banana', 'Swoon Lemonade'];
     const message = groceryList.map(element => `- ${element}`).join('\n');
@@ -21,7 +23,7 @@ export default function SendEmail() {
                 <Button variant="contained" class="emailButton" disableRipple on>Yes</Button>
                 </a>
                 <a href="/goodbye">
-                <Button variant="contained" class="emailButton" disableRipple>No</Button>
+                <Button variant="contained" class="emailButton" disableRipple onClick={()=>navigate('/goodbye')}>No</Button>
                 </a>
             </div>
         </div>

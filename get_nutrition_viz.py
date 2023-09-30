@@ -21,7 +21,6 @@ def plot_macro_breakdown(df):
         'Protein (g)': protein,
         'Carbohydrates (g)': carbohydrates
     }
-
   
     plt.pie(categories.values(), labels=categories.keys(), autopct='%1.1f%%', startangle=140)
     plt.title('Nutritional Categories for Your Purchases')

@@ -3,7 +3,9 @@ import requests
 import pandas as pd
 from dotenv import load_dotenv
 from pymongo import MongoClient
+from flask import Flask, request, jsonify
 
+app = Flask(__name__)
 # Load environment variables from .env file
 load_dotenv()
 
@@ -12,6 +14,7 @@ API_URL = 'https://api.calorieninjas.com/v1/nutrition?query='
 MONGO_URI = os.getenv('ATLAS_URI')
 DB_NAME = os.getenv('DB_NAME')  
 
+@app.route('/insert_dummy_data', methods=['POST'])
 def insert_dummy_data():
     """Inserts dummy data into the MongoDB database."""
     client = MongoClient(MONGO_URI)
@@ -43,30 +46,34 @@ def insert_dummy_data():
 # Call the function to insert dummy data
 insert_dummy_data()
 
-def get_user_by_email(email):
-    """Fetches a user by email from MongoDB."""
+@app.route('/get_user', methods=['GET'])
+def get_user_by_email():
+    email = request.args.get('email')
     client = MongoClient(MONGO_URI)
     db = client[DB_NAME]
-
     user = db.users.find_one({"email": email})
-    
     client.close()
-    return user
 
-def fetch_grocery_list_from_db(email):
-    """Fetches grocery list for a specific user from MongoDB based on email."""
+    if user:
+        # Convert ObjectId to str for serialization
+        user["_id"] = str(user["_id"])
+        return jsonify(user)
+    else:
+        return jsonify({"error": "User not found"}), 404
+
+
+@app.route('/get_grocery_data', methods=['GET'])
+def fetch_grocery_list_from_db():
+    email = request.args.get('email')
     client = MongoClient(MONGO_URI)
     db = client[DB_NAME]
-
-    # Fetch the purchases of the user with the given email
     user = db.users.find_one({"email": email})
-
     client.close()
 
     if user and "purchases" in user:
-        return user["purchases"]
+        return jsonify(user["purchases"])
     else:
-        return []
+        return jsonify([])
 
 def query_get(item):
     """Queries the API for nutritional information."""
@@ -94,6 +101,10 @@ def main():
     print(f"DataFrame:\n{df}")  
     df.to_csv('data/nutrition_data.csv', index=False)
     print("Data saved to nutrition_data.csv")  
+    if user and "purchases" in user:
+        return jsonify(user["purchases"])
+    else:
+        return jsonify([])
 
 if __name__ == "__main__":
-    main()
+      app.run(debug=True)

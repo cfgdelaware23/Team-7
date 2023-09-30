@@ -53,7 +53,7 @@ const SpotifyWrapped = () => {
 
   return (
     <div style={wrapperStyle}>
-      <h1 style={headingStyle}>Spotify Wrapped</h1>
+      <h1 style={headingStyle}>Better Nutrition</h1>
       <motion.div {...imageAnimationProps} style={imageContainerStyle}>
         <h2 style={imageTitleStyle}>Pie Chart</h2>
         <img src={imageUrl} alt="Pie Chart" className="chart-animation" />

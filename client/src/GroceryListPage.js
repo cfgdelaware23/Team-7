@@ -9,21 +9,6 @@ export default function GroceryListPage() {
 
   const groceryList = ['Apple', 'Apple', 'Banana', 'Swoon Lemonade'];
 
-  const [playAudio, setPlayAudio] = useState(false);
-
-  useEffect(() => {
-    // Play audio when the state indicates it should be played
-    if (playAudio) {
-      const audio = new Audio('audio/ChangetheWorld.mp3'); // Replace with the actual path to your audio file
-      audio.play();
-    } else {
-      // Stop the audio when navigating away from the page
-      const audio = new Audio('audio/ChangetheWorld.mp3'); // Replace with the actual path to your audio file
-      audio.pause();
-      audio.currentTime = 0; // Reset audio to the beginning
-    }
-  }, [playAudio]);
-
   return (
     <div class="groceryListContainer">
       <Typography variant="h1" sx={{ color: "white", paddingBottom:"24px" }}>
@@ -43,7 +28,6 @@ export default function GroceryListPage() {
         class="nextButton"
         disableRipple
         onClick={() => {
-          setPlayAudio(true); // Set the state to indicate that audio should be played
           navigate("/SpotifyWrap");
         }}
       >

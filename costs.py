@@ -11,7 +11,7 @@ def clean_csv(file_name):
         df.dropna(inplace=True)
     return df
 
-df = clean_csv('receipt.csv')
+df = clean_csv('prices.csv')
 
 food_items = ['beef_price_1lb', 'bread_price_loaf', 'tomato_price', 'potato_price', 
               'orange_price', 'lettuce_price', 'milk_price', 'strawberries_price', 

@@ -18,8 +18,8 @@ export default function FeedbackPage() {
     </Typography>
 
     <div class="buttonContainer">
-      <Button variant="contained" class="formButton" disableRipple onClick={()=>{setScoreDifference(1);  navigate('/');}}>Yes</Button>
-      <Button variant="contained" class="formButton" disableRipple onClick={()=>{setScoreDifference(-1);  navigate('/');}}>No</Button>
+      <Button variant="contained" class="formButton" disableRipple onClick={()=>{setScoreDifference(1);  navigate('/goodbye');}}>Yes</Button>
+      <Button variant="contained" class="formButton" disableRipple onClick={()=>{setScoreDifference(-1);  navigate('/goodbye');}}>No</Button>
     </div>
   </div>
   );

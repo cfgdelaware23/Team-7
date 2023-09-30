@@ -21,16 +21,24 @@ export default function FormPage() {
     console.log("yuh time to post to backend")
     async function onFilled() {
       const user = JSON.stringify({ firstName, lastName, snap, phone, email });
-      let res = await fetch("http://localhost:8080/create", {
+      fetch("http://localhost:8080/create", {
        method: "POST",
        headers: {
          "Content-Type": "application/json"
        },
        body: user,
-     });
+     }).then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+    navigate("/congratsPage");
+     console.log(error)
+    });
+
      navigate("/congratsPage");
     }
     if(firstName && lastName && snap && phone && email){
+      navigate("/congratsPage");
       onFilled();
     }
   },[firstName, lastName, snap, phone, email, navigate]);

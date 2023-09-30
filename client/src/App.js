@@ -11,7 +11,7 @@ import FormPage from './FormPage';
 import HomePage from './HomePage';
 import LookupPage from './LookupPage';
 import SpotifyWrapped from './SpotifyWrap';
-import BoughtItems from './Feedback';
+import BoughtItems from './FeedbackPage';
 
 
 function SwitchRoutes() {

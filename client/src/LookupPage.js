@@ -1,8 +1,11 @@
 import './FormPages.css';
 import { useEffect, useState } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
+import { useNavigate } from 'react-router-dom';
+
 
 export default function LookupPage() {
+    const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
 
@@ -46,7 +49,7 @@ export default function LookupPage() {
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
          <div class="singleButtonContainer">
-          <Button variant="contained" class="formButton" disableRipple onClick={fetchGroceryData}>lookup</Button>
+          <Button variant="contained" class="formButton" disableRipple onClick={()=>navigate("/GroceryListPage")}>lookup</Button>
         </div>
 
       </div>

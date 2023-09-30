@@ -28,7 +28,7 @@ export default function FormPage() {
        },
        body: user,
      });
-     navigate("/");
+     navigate("/congratsPage");
     }
     if(firstName && lastName && snap && phone && email){
       onFilled();

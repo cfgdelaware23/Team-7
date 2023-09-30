@@ -1,5 +1,7 @@
+import { Typography } from '@mui/material';
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./CongratsPage.css"
 
 function CongratsPage({ onSignUp }) {
   const navigate = useNavigate();
@@ -7,7 +9,7 @@ function CongratsPage({ onSignUp }) {
   useEffect(() => {
     const redirectTimeout = setTimeout(() => {
       navigate('/');
-    }, 5000);
+    }, 4000);
 
     return () => clearTimeout(redirectTimeout);
   }, [navigate]);
@@ -29,11 +31,9 @@ function CongratsPage({ onSignUp }) {
   };
 
   return (
-    <div style={centerTextStyle}>
-      <div style={boxStyle}>
-        <h3>Congratulations!</h3>
-        <p>You have successfully signed up.</p>
-      </div>
+    <div className='container'>
+      <Typography variant="h3" className='header'>thank you!</Typography>
+      <Typography variant="h4" sx={{color:"white"}}>you have successfully signed up.</Typography>
     </div>
   );
 }

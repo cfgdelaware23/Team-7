@@ -44,7 +44,7 @@ export default function SpotifyWrapped() {
     <div class="wrapperContainer">
       <div class="wrapperStyle">
       <Typography variant="h1" class="info">
-        Your Cart's Nutritional Breakdown:
+        your cart's nutritional breakdown:
       </Typography>
 
         <motion.div {...props} class="imageContainerStyle">
@@ -53,7 +53,7 @@ export default function SpotifyWrapped() {
     
     </div>
         <div class="singleButtonContainer">
-        <Button variant="contained" class="continueButton" disableRipple onClick={()=>navigate("/FeedbackPage")}>Continue</Button>
+        <Button variant="contained" class="continueButton" disableRipple onClick={()=>navigate("/FeedbackPage")}>continue</Button>
       </div>
      </div>
   );

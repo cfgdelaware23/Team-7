@@ -7,21 +7,35 @@ export default function GroceryListPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const groceryList = ['Apple', 'Apple', 'Banana', 'Swoon Lemonade'];
+  const groceryList = [
+    { item: 'Apple', price: 1.99 },
+    { item: 'Apple', price: 1.99 },
+    { item: 'Banana', price: 0.99 },
+    { item: 'Swoon Lemonade', price: 2.49 },
+  ];
+
+  // Calculate the total price
+  const totalPrice = groceryList.reduce((total, item) => total + item.price, 0);
 
   return (
     <div class="groceryListContainer">
-      <Typography variant="h1" sx={{ color: "white", paddingBottom:"24px" }}>
-        your cart:
+      <Typography variant="h1" sx={{ color: "white", paddingBottom: "24px" }}>
+        Your Cart:
       </Typography>
       <div class="listContainer">
-        {groceryList.map(function (data) {
+        {groceryList.map(function (data, index) {
           return (
-            <div>
-              {data}
+            <div key={index} className="groceryItem">
+              <span className="itemName">{data.item}</span>
+              <span className="itemPrice">${data.price.toFixed(2)}</span>
             </div>
           )
         })}
+      </div>
+      <div className="totalPrice">
+        <Typography variant="h4" sx={{ color: "white" }}>
+          Total: ${totalPrice.toFixed(2)}
+        </Typography>
       </div>
       <Button
         variant="contained"
@@ -31,7 +45,7 @@ export default function GroceryListPage() {
           navigate("/SpotifyWrap");
         }}
       >
-        check out
+        Check Out
       </Button>
     </div>
   );

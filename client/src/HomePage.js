@@ -1,5 +1,5 @@
 import {Button, Typography} from '@mui/material';
-import CongratsPage from './congrats';
+import CongratsPage from './Componets/congrats'
 
 function HomePage() {
     return (

@@ -4,7 +4,7 @@ import {Button, Typography} from '@mui/material';
 import NavBar from './navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Form from'./form.js';
-import CongratsPage from './congrats';
+import CongratsPage from './Componets/congrats'
 import FirstNameComponent from './FirstNameComponent';
 import HomePage from './HomePage';
 

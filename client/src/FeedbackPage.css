@@ -1,0 +1,32 @@
+.feedbackContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 12rem;
+    font-family: "Helvetica Neue";
+    /* min-height:100vh; */
+  }
+
+  .buttonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: center;
+    align-content:center;
+  }
+
+  .formButton{
+    background-color:white;
+    color:'black';
+    font-size:2rem;
+    padding:1rem 2rem 1rem 2rem;
+    border-color:white;
+    border-style:none;
+    border-radius:0.5rem;
+    margin-top: 2rem;
+    font-family: "Helvetica Neue";
+    margin-left: 16px;
+    margin-right: 16px;
+  }

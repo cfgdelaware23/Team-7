@@ -3,15 +3,15 @@ import {Button, Typography} from '@mui/material';
 // import '@fontsource/roboto/300.css';
 import NavBar from './navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Form from'./form.js';
 
 import CongratsPage from './components/CongratsPage'
 import HaveANiceDayPage from './components/GoodbyePage';
 import FormPage from './FormPage';
 import HomePage from './HomePage';
 import LookupPage from './LookupPage';
-import SpotifyWrapped from './SpotifyWrap';
+import SpotifyWrapped from './SpotifyWrapped';
 import GroceryListPage from './GroceryListPage';
+import FeedbackPage from './FeedbackPage';
 
 
 function SwitchRoutes() {
@@ -22,8 +22,9 @@ function SwitchRoutes() {
         <Route path='/goodbye' element={<HaveANiceDayPage/>}/>
         <Route path='/formPage' element={<FormPage/>}/>
         <Route path='/lookupPage' element={<LookupPage/>}/>
-        <Route path='/SpotifyWrap' element={<SpotifyWrapped/>}/>
+        <Route path='/SpotifyWrapped' element={<SpotifyWrapped/>}/>
         <Route path='/groceryListPage' element={<GroceryListPage/>}/>
+        <Route path='/feedbackpage' element={<FeedbackPage/>}/>
       </Routes>
   )
 }

@@ -20,7 +20,7 @@ export default function GroceryListPage() {
       )
      })} 
      </div>
-        <Button variant="contained" class="nextButton" disableRipple onClick={()=>navigate("/SpotifyWrap")}>Check Out</Button>
+        <Button variant="contained" class="nextButton" disableRipple onClick={()=>navigate("/SpotifyWrapped")}>Check Out</Button>
     </div>
   );
 }

@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import {Button, Typography} from '@mui/material';
+import '@fontsource/roboto/300.css';
+
 import Form from'./form.js';
+
 
 function App() {
   return (
-    <><Form /><div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        </a>
-      </header>
-    </div></>
+    //<Navbar/>
+    <div class="home">
+      <Typography variant="h1" class="welcomeText">
+      Welcome!
+      </Typography>
+
+      <div class = "homeInfoContainer">
+        <Typography variant="body1" type="left" class="infoText">
+        Creating a seamless grocery shopping experience, with<br></br>
+        <i> personalized pricing.</i>
+        </Typography>
+        <img src={require("./images/homeImage.png")} class ="homeInfoImage" alt="A World Well Nourished"></img>
+      </div>
+
+      <Typography variant="body1" class="promptText">
+      Do you have an account with us?
+      </Typography>
+     
+      <div class = "homeButtonContainer">
+        <Button variant="contained" class="homeButton" disableRipple>Yes</Button>
+        <Button variant="contained" class="homeButton" disableRipple>No</Button>
+      </div>
+    </div>
   );
 }
 

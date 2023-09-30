@@ -6,7 +6,7 @@ function HaveANiceDayPage() {
     // Use setTimeout to delay the redirection for 3 seconds (adjust the time as needed)
     const redirectTimeout = setTimeout(() => {
       window.location.href = '/'; // Replace '/' with the URL of your home page
-    }, 3000); // 3000 milliseconds (3 seconds)
+    }, 5000); // 3000 milliseconds (3 seconds)
 
     // Clear the timeout when the component unmounts to prevent memory leaks
     return () => clearTimeout(redirectTimeout);

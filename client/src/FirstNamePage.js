@@ -1,8 +1,12 @@
+import './FormPages.css';
 import { useState } from 'react';
 import { TextField, Box , Button} from "@mui/material";
 
 export default function FirstNameComponent() {
   const [firstName, setFirstName] = useState('');
+
+  // props: current user schema, question, setQuestion 
+
 
   return (
     <div style={{

@@ -1,13 +1,13 @@
 .logoWell {
   color: #D63923;
-  font-family: 'Avenir';
+  font-family: 'Helvetica Neue';
   font-weight: 600;
   font-size: 28px;
 }
 
 .logoFare {
   color: #6F96A3;
-  font-family: 'Avenir';
+  font-family: 'Helvetica Neue';
   font-weight: 600;
   font-size: 28px;
 }
@@ -16,13 +16,24 @@
   padding-left: 24px;
   padding-top: 16px;
   background-color: #FFFFFF;
+  padding-bottom: 16px;
+}
+
+.bar-container{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .navitems {
   padding-left: 36px;
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-link {
+  font-family: "Helvetica Neue";
   font-size: 16px;
+  margin-right:2rem;
 }

@@ -44,13 +44,7 @@ export default function LookupPage() {
           inputProps={{style: {fontSize: '2rem'}}} // font size of input text
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
-<<<<<<< HEAD
-         <div class="singleButtonContainer">
-          <Button variant="contained" class="formButton" disableRipple>lookup</Button>
-        </div>
-=======
         <Button variant="contained" class="formButton" disableRipple onClick={()=>fetchGroceryData(email)}>Lookup</Button>
->>>>>>> 135935165aa3d726cb85810b1aa1edd5fada48b1
       </div>
     </div>
   );

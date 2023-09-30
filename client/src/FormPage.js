@@ -28,16 +28,16 @@ export default function FormPage() {
        },
        body: user,
      }).then(data => {
+      navigate("/congratsPage");
       console.log(data)
     })
     .catch(error => {
     navigate("/congratsPage");
      console.log(error)
     });
-
-     navigate("/congratsPage");
     }
-    if(firstName && lastName && snap && phone && email){
+
+    if(firstName && lastName && modifiedSnap && phone && email){
       navigate("/congratsPage");
       onFilled();
     }

@@ -1,6 +1,6 @@
 import './App.css';
 import {Button, Typography} from '@mui/material';
-import CongratsPage from './Componets/congrats'
+import CongratsPage from './components/CongratsPage'
 // import '@fontsource/roboto/300.css';
 import NavBar from './navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -17,7 +17,7 @@ function HomePage() {
   
         <div class = "homeInfoContainer">
           <Typography variant="body1" type="left" class="infoText">
-          Creating a seamless grocery shopping experience, with<br></br>
+          Creating a seamless grocery<br></br>shopping experience, with<br></br>
           <i> personalized pricing.</i>
           </Typography>
           <img src={require("./images/homeImage.png")} class ="homeInfoImage" alt="A World Well Nourished"></img>
@@ -28,10 +28,10 @@ function HomePage() {
         </Typography>
        
         <div class = "homeButtonContainer">
-        <a href="/formPage">
           <Button variant="contained" class="homeButton" disableRipple>Yes</Button>
-          </a>
+          <a href="/formPage">
           <Button variant="contained" class="homeButton" disableRipple>No</Button>
+          </a>
         </div>
       </div>
       );

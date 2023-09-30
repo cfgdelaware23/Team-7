@@ -1,6 +1,5 @@
 import './FormPages.css';
 import { useState, useEffect } from 'react';
-import { TextField, Box , Button, Typography} from "@mui/material";
 import FormComponent from './components/FormComponent'
 import BooleanFormComponent from './components/BooleanFormComponent'
 import { useNavigate } from 'react-router-dom';

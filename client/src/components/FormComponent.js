@@ -1,6 +1,6 @@
 import './../FormPages.css';
 import { useState } from 'react';
-import { TextField, Box , Button, Typography} from "@mui/material";
+import { TextField, Button, Typography} from "@mui/material";
 
 export default function FormComponent({property, setProperty}) {
 

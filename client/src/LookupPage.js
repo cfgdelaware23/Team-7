@@ -49,7 +49,7 @@ export default function LookupPage() {
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
          <div class="singleButtonContainer">
-          <Button variant="contained" class="formButton" disableRipple onClick={fetchGroceryData}>lookup</Button>
+          <Button variant="contained" class="formButton" disableRipple onClick={()=>navigate("/GroceryListPage")}>lookup</Button>
         </div>
 
       </div>

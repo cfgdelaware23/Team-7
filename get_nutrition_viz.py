@@ -2,14 +2,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from collections import Counter
 from wordcloud import WordCloud
+import seaborn as sns
 
 def extract_column_sum(df, column_name):
-    """Extracts the sum of values from a specific column after converting to float."""
-    if column_name in df.columns:
-        return df[column_name].astype(float).sum()
-    else:
-        print(f"Warning: Column '{column_name}' not found in the DataFrame.")
-        return 0.0
+    return df[column_name].astype(float).sum()
 
 def plot_macro_breakdown(df):
     total_fat = extract_column_sum(df, 'fat_total_g')
@@ -21,11 +17,18 @@ def plot_macro_breakdown(df):
         'Protein (g)': protein,
         'Carbohydrates (g)': carbohydrates
     }
-  
-    plt.pie(categories.values(), labels=categories.keys(), autopct='%1.1f%%', startangle=140)
-    plt.title('Nutritional Categories for Your Purchases')
-    plt.axis('equal')  
-    plt.savefig('client/src/assets/pie_chart.png')
+    
+    sns.set(style="whitegrid")
+    
+    # Colors
+    colors = ['#D63C23', '#6F96A3', '#1E4182']
+    
+    plt.figure(figsize=(10, 6))
+    plt.pie(categories.values(), labels=categories.keys(), autopct='%1.1f%%', startangle=140, colors=colors, wedgeprops=dict(width=0.3))
+    plt.title('Nutritional Categories for Your Purchases', fontsize=15)
+    
+
+    plt.savefig('client/src/assets/pie_chart.png', bbox_inches='tight')
 
 def generate_word_cloud(df):
     if 'name' in df.columns:
@@ -38,7 +41,7 @@ def generate_word_cloud(df):
         plt.figure(figsize=(10, 5))
         plt.imshow(wordcloud, interpolation='bilinear')
         plt.axis("off")
-        plt.savefig('client/src/assets/word_cloud.png')
+        plt.savefig('assets/word_cloud.png')
     else:
         print("Warning: Column 'name' not found in the DataFrame.")
 
@@ -49,3 +52,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+

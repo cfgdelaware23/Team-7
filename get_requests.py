@@ -2,6 +2,7 @@ import os
 import sqlite3
 import requests
 import json
+import pandas as pd
 
 
 API_KEY = os.getenv('API_KEY')
@@ -30,20 +31,19 @@ def query_get(item):
 
 
 def go_over_groceries(grocery_list):
-    """Loops over grocery items and fetches their nutritional information."""
-    items_data = {"items": []}
+    """Convert to csv to read into python later"""
+    items_data = []
     for grocery in grocery_list:
-        response_text = query_get(grocery)
-        if response_text:
-            response = json.loads(response_text)
-            items_data["items"].append(response["items"][0])
-    return items_data
+        response = query_get(grocery)
+        items_data.extend(response["items"])
+    return pd.DataFrame(items_data)
 
 
 def main():
-    #grocery_list = fetch_grocery_list_from_db('database.db')
-    response = go_over_groceries(grocery_list)
-    print(response)
+    # CHANGE TO ACTUAL PATH ****
+    grocery_list = fetch_grocery_list_from_db('path_to_the_database_file.db')
+    df = go_over_groceries(grocery_list)
+    df.to_csv('nutrition_data.csv', index=False)
 
 
 if __name__ == "__main__":

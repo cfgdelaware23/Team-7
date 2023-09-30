@@ -3,13 +3,14 @@ body,html{
   background-position: 'center';
   background-size:cover;
   background-repeat: no-repeat;
-  background-image: url("images/homebg.webp");
+  background-image: url("images/betterBox.png");
   margin:0;
   font-family: Sans-Serif;
   background-color: black;
 }
 
 .home{
+  min-height:100vh;
   font-weight: 700;
   display: flex;
   flex-direction: column;

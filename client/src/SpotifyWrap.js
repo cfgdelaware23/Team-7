@@ -23,25 +23,30 @@ const SpotifyWrapped = () => {
   const imageUrl2 = require('./assets/word_cloud.png');
 
   const imageContainerStyle = {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
     margin: '20px', // Adjust margin as needed
+    border: '2px solid #6F96A3', // Add a blue border
+    padding: '10px', // Add padding
+    borderRadius: '8px', // Rounded corners
   };
 
   const imageTitleStyle = {
-    fontSize: '18px',
+    fontSize: '40px',
     fontWeight: 'bold',
+    color: 'white', // Text color
     margin: '10px', // Adjust margin as needed
   };
 
   const imageAnimationProps = {
     initial: { scale: 0 },
-    animate: { rotate: 360, scale: 1 },
+    animate: { rotate: 360, scale: 0.86 },
     transition: {
       type: 'spring',
-      stiffness: 260,
+      stiffness: 180,
       damping: 20,
     },
   };

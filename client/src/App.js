@@ -17,7 +17,7 @@ function SwitchRoutes() {
         <Route path='/congratsPage' element={<CongratsPage/>}/>
         <Route path='/goodbye' element={<HaveANiceDayPage/>}/>
         <Route path='/formPage' element={<FormPage/>}/>
-        <Route path='/SpotifyWrap' elemnt={<SpotifyWrapped/>}/>
+        <Route path='/SpotifyWrap' element={<SpotifyWrapped/>}/>
       </Routes>
   )
 }

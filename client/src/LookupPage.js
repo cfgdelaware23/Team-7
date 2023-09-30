@@ -10,8 +10,9 @@ export default function LookupPage() {
         setEmail(event.target.value);
       };
 
-    const fetchGroceryData = (email) => {
-        fetch("http://localhost:8080/get_grocery_data", {
+    async function fetchGroceryData() {
+      console.log(JSON.stringify({ email: email }));
+        let res = await fetch("http://localhost:5000/get_grocery_data", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
@@ -45,8 +46,9 @@ export default function LookupPage() {
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
          <div class="singleButtonContainer">
-          <Button variant="contained" class="formButton" disableRipple>lookup</Button>
+          <Button variant="contained" class="formButton" disableRipple onClick={fetchGroceryData}>lookup</Button>
         </div>
+
       </div>
     </div>
   );

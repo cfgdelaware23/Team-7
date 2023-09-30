@@ -18,6 +18,9 @@ const SpotifyWrapped = () => {
   };
 
   // Use require to import the image
+  //both of these images are updated based on the get_nutrition_viz.py
+  //get_nutrition_viz.py is a dynamic file that connects to backend data that views the users history 
+  //and cacluates valuable information for both the store and the customer
   const imageUrl = require('./assets/pie_chart.png');
   const imageUrl2 = require('./assets/word_cloud.png');
 

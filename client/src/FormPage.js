@@ -28,32 +28,33 @@ export default function FormPage() {
        },
        body: user,
      });
+     navigate("/");
     }
     if(firstName && lastName && snap && phone && email){
       onFilled();
     }
-  },[firstName, lastName, snap, phone, email]);
+  },[firstName, lastName, snap, phone, email, navigate]);
 
   return (
     <>
       {!firstName && !lastName && !modifiedSnap && !phone && !email &&
-      <FormComponent property={"First Name:"} setProperty={setFirstName}/>
+      <FormComponent property={"first name:"} setProperty={setFirstName}/>
        }
 
     {firstName && !lastName && !modifiedSnap && !phone && !email &&
-       <FormComponent property={"Last Name:"} setProperty={setLastName}/>
+       <FormComponent property={"last name:"} setProperty={setLastName}/>
     }
 
     {firstName && lastName && !modifiedSnap && !phone && !email &&
-       <BooleanFormComponent property={"Do you qualify for SNAP or EBT?"} setProperty={setSnap} setModifiedProperty={setModifiedSnap}/>
+       <BooleanFormComponent property={"do you qualify for SNAP or EBT?"} setProperty={setSnap} setModifiedProperty={setModifiedSnap}/>
     }
 
     {firstName && lastName && modifiedSnap && !phone && !email &&
-       <FormComponent property={"Phone #:"} setProperty={setPhone}/>
+       <FormComponent property={"phone number:"} setProperty={setPhone}/>
     }
 
   {firstName && lastName && modifiedSnap && phone && !email &&
-       <FormComponent property={"Email:"} setProperty={setEmail}/>
+       <FormComponent property={"email:"} setProperty={setEmail}/>
     }
     </>
   );

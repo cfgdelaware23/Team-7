@@ -1,5 +1,5 @@
 import './FormPages.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TextField, Box , Button, Typography} from "@mui/material";
 
 export default function LookupPage() {
@@ -10,10 +10,31 @@ export default function LookupPage() {
         setEmail(event.target.value);
       };
 
+    const fetchGroceryData = (email) => {
+        fetch("http://localhost:5000/get_grocery_data", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: email })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Use the data in your React component
+            this.setState({ groceries: data });
+            console.log(data);
+            console.log("got");
+        })
+        .catch(error => console.error("Error fetching data:", error));
+    }
+
   return (
     <div class="formContainer">
-      <Typography variant="h1" sx={{Color:"white"}}>
-        Lookup By Email:
+      <Typography variant="h4" className="body">
+        welcome back!
+      </Typography>
+      <Typography variant="h2" sx={{color:"white", paddingBottom:"24px"}}>
+        lookup by email:
       </Typography>
       <div class="inputContainer">
         <TextField
@@ -23,9 +44,13 @@ export default function LookupPage() {
           inputProps={{style: {fontSize: '2rem'}}} // font size of input text
           InputLabelProps={{style: {fontSize: '2rem'}}}
         />
+<<<<<<< HEAD
          <div class="singleButtonContainer">
-          <Button variant="contained" class="formButton" disableRipple>Lookup</Button>
+          <Button variant="contained" class="formButton" disableRipple>lookup</Button>
         </div>
+=======
+        <Button variant="contained" class="formButton" disableRipple onClick={()=>fetchGroceryData(email)}>Lookup</Button>
+>>>>>>> 135935165aa3d726cb85810b1aa1edd5fada48b1
       </div>
     </div>
   );

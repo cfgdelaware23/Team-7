@@ -6,7 +6,7 @@ export default function BooleanFormComponent({property, setProperty, setModified
     
   return (
     <div class="formContainer">
-      <Typography variant="h1" sx={{Color:"white"}}>
+      <Typography variant="h2" sx={{color:"white", paddingBottom:"24px"}}>
         {property}
       </Typography>
         <div class="buttonContainer">

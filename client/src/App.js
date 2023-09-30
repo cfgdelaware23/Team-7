@@ -7,8 +7,8 @@ import Form from'./form.js';
 import CongratsPage from './Componets/congrats'
 import HaveANiceDayPage from './Componets/GoodbyePage';
 import FormPage from './FormPage';
-
 import HomePage from './HomePage';
+import SpotifyWrapped from './SpotifyWrap';
 
 function SwitchRoutes() {
   return (
@@ -17,6 +17,7 @@ function SwitchRoutes() {
         <Route path='/congratsPage' element={<CongratsPage/>}/>
         <Route path='/goodbye' element={<HaveANiceDayPage/>}/>
         <Route path='/formPage' element={<FormPage/>}/>
+        <Route path='/SpotifyWrap' elemnt={<SpotifyWrapped/>}/>
       </Routes>
   )
 }

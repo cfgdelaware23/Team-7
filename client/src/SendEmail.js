@@ -20,11 +20,9 @@ export default function SendEmail() {
             <Typography class="emailText">Email Past Purchase</Typography>
             <div class="buttonContainer">
                 <a href={emailLink}>
-                <Button variant="contained" class="emailButton" disableRipple on>Yes</Button>
+                <Button variant="contained" class="emailButton" disableRipple onClick={()=>navigate('/goodbye')}>Yes</Button>
                 </a>
-                <a href="/goodbye">
                 <Button variant="contained" class="emailButton" disableRipple onClick={()=>navigate('/goodbye')}>No</Button>
-                </a>
             </div>
         </div>
     </div>

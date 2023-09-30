@@ -1,34 +1,39 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate from React Router
+import { useNavigate } from 'react-router-dom';
 
 function CongratsPage({ onSignUp }) {
-  const navigate = useNavigate(); // Create a navigate function
+  const navigate = useNavigate();
 
   useEffect(() => {
-    // Use setTimeout to delay the redirection for 3 seconds (adjust the time as needed)
     const redirectTimeout = setTimeout(() => {
-      navigate('/'); // Use navigate('/') to go back to the home page
-    }, 3000); // 3000 milliseconds (3 seconds)
+      navigate('/');
+    }, 5000);
 
-    // Clear the timeout when the component unmounts to prevent memory leaks
     return () => clearTimeout(redirectTimeout);
   }, [navigate]);
 
-  const congratsPageStyle = {
-    fontFamily: 'Roboto, sans-serif', // Apply the Roboto font
+  const centerTextStyle = {
     textAlign: 'center',
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
   };
 
-  const handleSignUp = () => {
-    if (typeof onSignUp === 'function') {
-      onSignUp();
-    }
+  const boxStyle = {
+    backgroundColor: 'rgba(111, 150, 163, 0.7)', // Color #6F96A3 with 70% opacity
+    padding: '40px', // Increase padding to make the box slightly bigger
+    position: 'relative',
+    top: '50px', /* Adjust the distance from the top as needed */
+    fontSize: '24px', // Increase font size to make the text bigger
   };
 
   return (
-    <div style={congratsPageStyle} className="congrats-page">
-      <h3>Congratulations! </h3>
-      <p>You have successfully signed up.</p>
+    <div style={centerTextStyle}>
+      <div style={boxStyle}>
+        <h3>Congratulations!</h3>
+        <p>You have successfully signed up.</p>
+      </div>
     </div>
   );
 }
